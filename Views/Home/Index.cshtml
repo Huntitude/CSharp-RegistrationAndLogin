@@ -1,0 +1,89 @@
+@model ViewModel
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/Index.css">
+  </head>
+  <body>
+    <div class="navheader">
+        <h1>Welcome to User Registration and Login</h1>
+    </div>
+      
+<div class="Wrapper">
+
+    <div class="Register">
+        <div class="card">
+            <div class="card-header">
+                <h1>Register</h1>
+            </div>
+
+            <div class="card-body">
+                <form asp-action="Register" asp-controller="Home" method="post">
+                    <div class="form-group">
+                        <label asp-for="User.FirstName"></label><br>
+                        <span class="alert-danger" asp-validation-for="User.FirstName"></span>
+                        <input class="form-control" asp-for="User.FirstName" type="text" placeholder="Enter First Name"><br>
+
+                        <label asp-for="User.LastName"></label><br>
+                        <span class="alert-danger" asp-validation-for="User.LastName"></span>
+                        <input class="form-control" asp-for="User.LastName" type="text" placeholder="Enter Last Name">
+
+                        <label asp-for="User.Email"></label><br>
+                        <span class="alert-danger" asp-validation-for="User.Email"></span>
+                        <input class="form-control" asp-for="User.Email" type="email" placeholder="Enter Eamil">
+
+                        <label asp-for="User.Password"></label><br>
+                        <span class="alert-danger" asp-validation-for="User.Password"></span>
+                        <input class="form-control" asp-for="User.Password" type="password" value="12345678">
+
+                        <label asp-for="User.Confirm"></label><br>
+                        <span class="alert-danger" asp-validation-for="User.Confirm"></span>
+                        <input class="form-control" asp-for="User.Confirm" type="password" value="12345678">
+                    </div>
+
+                    <button class="btn btn-pill btn-block btn-primary active" type="submit" aria-pressed="true">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <div class="Login">
+        <div class="card">
+            <div class="card-header">
+                <h1>Login</h1>
+            </div>
+
+            <div class="card-body">
+                <form action="login" method="post">
+                    <div class="form-group">
+                        <label asp-for="Userlogin.Email"></label><br>
+                        <span class="alert-danger" asp-validation-for="Userlogin.Email"></span>                        
+                        <input class="form-control" asp-for="Userlogin.Email" type="email" placeholder="Enter Eamil">
+
+                        <label asp-for="Userlogin.Password"></label><br>
+                        <span class="alert-danger" asp-validation-for="Userlogin.Password"></span> 
+                        <input class="form-control" asp-for="Userlogin.Password" type="password" value="12345678">
+                    </div>
+
+                    <button class="btn btn-pill btn-block btn-primary active" type="submit" aria-pressed="true">Login</button>
+                </form>
+            </div>
+        </div>
+        </div>
+
+<!-- END OF WRAPPER -->
+</div>
+
+
+
+
+  </body>
+</html>
